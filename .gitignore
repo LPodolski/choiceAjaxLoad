@@ -9,3 +9,6 @@
 /composer.phar
 /vendor/
 /web/bundles/
+
+.idea
+web/app_vm.php
