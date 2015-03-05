@@ -15,7 +15,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $em   = $this->getDoctrine()->getManager();
         $item = new Item();
         $form = $this->createForm(new ItemType(), $item);
 
@@ -26,8 +26,11 @@ class DefaultController extends Controller
             return $this->redirect($this->generateUrl('homepage'));
         }
 
+        $items = $em->getRepository('AppBundle:Item')->findAll();
+
         return $this->render('default/index.html.twig', array(
-            'form' => $form->createView(),
+            'form'  => $form->createView(),
+            'items' => $items
         ));
     }
 }

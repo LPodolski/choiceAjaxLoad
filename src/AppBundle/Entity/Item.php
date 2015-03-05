@@ -32,7 +32,7 @@ class Item
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,7 +55,7 @@ class Item
     /**
      * Get choiceField
      *
-     * @return string 
+     * @return string
      */
     public function getChoiceField()
     {

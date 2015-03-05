@@ -1,5 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form(form) }}
+  {{ form(form) }}
+
+  {% if items is not empty %}
+    <div>
+      <ul>
+        {% for item in items %}
+          <li>{{ item.choiceField }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+
+  <script src="{{ asset('js/loadSelect.js') }}"></script>
 {% endblock %}
